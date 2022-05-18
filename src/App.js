@@ -11,7 +11,7 @@ import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();
-  const { dataList } = useSelector((state) => state.data);
+  const { dataList, dataTotal, dataObj } = useSelector((state) => state.data);
   const { title, subTitle, chartTitle } = useSelector((state) => state.titles);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const App = () => {
       <div>{title}</div>
       <div>{subTitle}</div>
       <div>{chartTitle}</div>
-      <div>{dataList.length}</div>
+      <div>{dataTotal}</div>
     </div>
   );
 };
