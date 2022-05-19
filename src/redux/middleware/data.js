@@ -27,14 +27,20 @@ export const dataMiddleware =
             dispatch(updateDataTotal(count));
 
             // adding values to data list
-            const list = input.data.map((item, i) => {
-              return {
-                ...item,
-                value: Number(item.value),
-                percent: `${((Number(item.value) / count) * 100).toFixed(2)}%`,
-                color: colors[i],
-              };
-            });
+            const list = input.data
+              .map((item, i) => {
+                return {
+                  ...item,
+                  value: Number(item.value),
+                  percent: `${((Number(item.value) / count) * 100).toFixed(
+                    2
+                  )}%`,
+                  color: colors[i],
+                };
+              })
+              .sort((a, b) => {
+                return a.value > b.value ? -1 : 1;
+              });
 
             dispatch(updateDataList(list));
           }
