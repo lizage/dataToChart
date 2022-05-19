@@ -6,6 +6,11 @@ import {
 } from "../titles/titlesSlice";
 import { colors } from "../../resource";
 
+let formatter = Intl.NumberFormat("en", {
+  notation: "compact",
+  maximumSignificantDigits: 3,
+});
+
 export const dataMiddleware =
   ({ dispatch }) =>
   (next) =>
@@ -24,9 +29,9 @@ export const dataMiddleware =
             // calculating total
             let count = 0;
             input.data.forEach((item) => (count = count + Number(item.value)));
-            dispatch(updateDataTotal(count));
+            dispatch(updateDataTotal(formatter.format(count)));
 
-            // building and sorting data list
+            // data list building, sorting, formatting currency
             const list = input.data
               .map((item, i) => {
                 return {
@@ -40,6 +45,9 @@ export const dataMiddleware =
               })
               .sort((a, b) => {
                 return a.value > b.value ? -1 : 1;
+              })
+              .map((item) => {
+                return { ...item, value: formatter.format(item.value) };
               });
 
             dispatch(updateDataList(list));
