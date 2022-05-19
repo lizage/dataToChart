@@ -4,6 +4,7 @@ import { updateInput } from "./redux/input/inputSlice";
 import Titles from "./components/Titles/Titles";
 import StackedChart from "./components/StackedChart/StackedChart";
 import Tiles from "./components/Tiles/Tiles";
+import BarGraph from "./components/BarGraph/BarGraph";
 import { input } from "./resource";
 import "./App.css";
 
@@ -26,6 +27,7 @@ const App = () => {
       />
       <StackedChart list={dataList} />
       <Tiles list={dataList} />
+      <BarGraph list={dataList} />
     </div>
   );
 };

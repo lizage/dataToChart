@@ -5,20 +5,39 @@ export const WrapperStyled = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0;
-  flex: 1 1;
-
-  @media (min-width: 600px) {
-    flex-wrap: nowrap;
-  }
 `;
 
 export const TileStyled = styled.div`
-  border: solid 1px #ccc;
   padding: 1rem;
-  width: 10rem;
+  width: 12rem;
   flex-grow: 0;
   flex-shrink: 0;
-  border-radius: 0.4rem;
+  flex-basis: 25%;
   margin-bottom: 2rem;
+  text-align: center;
+  border: solid 1px;
+  min-width: 14rem;
+`;
+
+export const ValueLabelStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  > span {
+    color: #333;
+    font-size: 3rem;
+  }
+`;
+
+export const NameLabelStyled = styled.div`
+  font-size: 1.6rem;
+`;
+
+export const MarkerStyled = styled.div`
+  background-color: ${({ bgColor }) => (bgColor ? bgColor : "transparent")};
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
 `;
