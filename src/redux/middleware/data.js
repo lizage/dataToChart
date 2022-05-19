@@ -26,7 +26,7 @@ export const dataMiddleware =
             input.data.forEach((item) => (count = count + Number(item.value)));
             dispatch(updateDataTotal(count));
 
-            // adding values to data list
+            // building and sorting data list
             const list = input.data
               .map((item, i) => {
                 return {

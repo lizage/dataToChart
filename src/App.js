@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateInput } from "./redux/input/inputSlice";
 import Titles from "./components/Titles/Titles";
 import StackedChart from "./components/StackedChart/StackedChart";
+import Tiles from "./components/Tiles/Tiles";
 import { input } from "./resource";
 import "./App.css";
 
@@ -24,6 +25,7 @@ const App = () => {
         dataTotal={dataTotal}
       />
       <StackedChart list={dataList} />
+      <Tiles list={dataList} />
     </div>
   );
 };
