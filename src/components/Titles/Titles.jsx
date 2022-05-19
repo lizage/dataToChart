@@ -6,12 +6,12 @@ import {
   ChartTitleStyled,
 } from "./Titles.style";
 
-const Titles = ({ title, subTitle, chartTitle }) => {
+const Titles = ({ title, subTitle, chartTitle, dataTotal }) => {
   return (
     <WrapperStyled>
       <TitleStyled>{title}</TitleStyled>
       <SubTitleStyled>{subTitle}</SubTitleStyled>
-      <ChartTitleStyled>{chartTitle}</ChartTitleStyled>
+      <ChartTitleStyled>{`${chartTitle}: ${dataTotal}`}</ChartTitleStyled>
     </WrapperStyled>
   );
 };

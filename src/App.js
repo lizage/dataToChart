@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateInput } from "./redux/input/inputSlice";
 import Titles from "./components/Titles/Titles";
+import StackedChart from "./components/StackedChart/StackedChart";
 import { input } from "./resource";
 import "./App.css";
 
@@ -16,12 +17,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <Titles title={title} subTitle={subTitle} chartTitle={chartTitle} />
-      <div>{title}</div>
-      <div>{subTitle}</div>
-      <div>{chartTitle}</div>
-      <div>{dataTotal}</div>
-      <div>{dataList.length}</div>
+      <Titles
+        title={title}
+        subTitle={subTitle}
+        chartTitle={chartTitle}
+        dataTotal={dataTotal}
+      />
+      <StackedChart list={dataList} />
     </div>
   );
 };
