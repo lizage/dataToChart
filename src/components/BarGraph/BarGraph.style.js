@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const WrapperStyled = styled.div`
   width: 100%;
   height: 30rem;
-  border-top: solid 1px #ccc;
-  border-bottom: solid 1px #ccc;
+  border: solid 1px #ccc;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;

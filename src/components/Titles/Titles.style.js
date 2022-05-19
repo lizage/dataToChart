@@ -9,13 +9,14 @@ export const WrapperStyled = styled.div`
 `;
 
 export const TitleStyled = styled.h1`
-  font-size: 1.6rem;
+  font-size: 2.6rem;
 `;
 
 export const SubTitleStyled = styled.h2`
   font-size: 1.4rem;
+  font-weight: 400;
 `;
 
 export const ChartTitleStyled = styled.h3`
-  font-size: 1.6rem;
+  font-size: 2rem;
 `;

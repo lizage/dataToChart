@@ -15,7 +15,6 @@ export const TileStyled = styled.div`
   flex-basis: 25%;
   margin-bottom: 2rem;
   text-align: center;
-  border: solid 1px;
   min-width: 14rem;
 `;
 
@@ -27,7 +26,7 @@ export const ValueLabelStyled = styled.div`
   margin-bottom: 0.5rem;
   > span {
     color: #333;
-    font-size: 3rem;
+    font-size: 2.6rem;
   }
 `;
 
