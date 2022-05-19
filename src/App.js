@@ -1,25 +1,17 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateDataList } from "./redux/data/dataSlice";
-import {
-  updateTitle,
-  updateSubTitle,
-  updateChartTitle,
-} from "./redux/titles/titlesSlice";
+import { updateInput } from "./redux/input/inputSlice";
 import { input } from "./resource";
 import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();
-  const { dataList, dataTotal, dataObj } = useSelector((state) => state.data);
+  const { dataList, dataTotal } = useSelector((state) => state.data);
   const { title, subTitle, chartTitle } = useSelector((state) => state.titles);
 
   useEffect(() => {
-    dispatch(updateTitle(input.title));
-    dispatch(updateSubTitle(input.subTitle));
-    dispatch(updateChartTitle(input.chartTitle));
-    dispatch(updateDataList(input.data));
-  }, [input]);
+    dispatch(updateInput(input));
+  }, [input]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="App">
@@ -27,6 +19,7 @@ const App = () => {
       <div>{subTitle}</div>
       <div>{chartTitle}</div>
       <div>{dataTotal}</div>
+      <div>{dataList.length}</div>
     </div>
   );
 };

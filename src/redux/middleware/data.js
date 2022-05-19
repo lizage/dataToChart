@@ -1,4 +1,9 @@
-import { updateDataObj, updateDataTotal } from "../data/dataSlice";
+import { updateDataList, updateDataTotal } from "../data/dataSlice";
+import {
+  updateTitle,
+  updateSubTitle,
+  updateChartTitle,
+} from "../titles/titlesSlice";
 import { colors } from "../../resource";
 
 export const dataMiddleware =
@@ -9,28 +14,33 @@ export const dataMiddleware =
 
     if (action.payload) {
       switch (action.type) {
-        case "data/updateDataList": {
-          const list = action.payload;
+        case "input/updateInput":
+          {
+            const input = action.payload;
+            dispatch(updateTitle(input.title));
+            dispatch(updateSubTitle(input.subTitle));
+            dispatch(updateChartTitle(input.chartTitle));
 
-          // storing total
-          let count = 0;
-          list.forEach((item) => (count = count + Number(item.value)));
-          dispatch(updateDataTotal(count));
+            // calculating total
+            let count = 0;
+            input.data.forEach((item) => (count = count + Number(item.value)));
+            dispatch(updateDataTotal(count));
 
-          // storing graph data as a dictionary
-          const obj = {};
-          list.forEach(
-            (item, i) =>
-              (obj[item.name] = {
+            // adding values to data list
+            const list = input.data.map((item, i) => {
+              return {
+                ...item,
                 value: Number(item.value),
-                percent: Number(
-                  ((Number(item.value) / count) * 100).toFixed(2)
-                ),
+                percent: `${((Number(item.value) / count) * 100).toFixed(2)}%`,
                 color: colors[i],
-              })
-          );
-          dispatch(updateDataObj(obj));
-        }
+              };
+            });
+
+            dispatch(updateDataList(list));
+          }
+          break;
+        default:
+          return;
       }
     }
   };
