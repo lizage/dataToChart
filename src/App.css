@@ -5,10 +5,14 @@ html,
   padding: 0;
   direction: ltr;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 10px;
 }
 
 button,
 input {
   outline: none;
+}
+
+.App {
+  padding: 50px;
 }

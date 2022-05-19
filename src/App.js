@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateInput } from "./redux/input/inputSlice";
+import Titles from "./components/Titles/Titles";
 import { input } from "./resource";
 import "./App.css";
 
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <Titles title={title} subTitle={subTitle} chartTitle={chartTitle} />
       <div>{title}</div>
       <div>{subTitle}</div>
       <div>{chartTitle}</div>
