@@ -4,7 +4,6 @@ export const WrapperStyled = styled.div`
   width: 100%;
   > * {
     margin-bottom: 2rem;
-    color: #333;
   }
 `;
 
@@ -13,7 +12,7 @@ export const TitleStyled = styled.h1`
 `;
 
 export const SubTitleStyled = styled.h2`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 400;
 `;
 

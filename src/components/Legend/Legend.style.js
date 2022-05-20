@@ -7,7 +7,7 @@ export const WrapperStyled = styled.div`
   flex-wrap: wrap;
 `;
 
-export const TileStyled = styled.div`
+export const LegendStyled = styled.div`
   padding: 1rem;
   width: 12rem;
   flex-grow: 0;
@@ -25,7 +25,6 @@ export const ValueLabelStyled = styled.div`
   gap: 0.5rem;
   margin-bottom: 0.5rem;
   > span {
-    color: #333;
     font-size: 2.6rem;
   }
 `;

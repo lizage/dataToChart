@@ -9,8 +9,6 @@ export const ChartStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0;
-  border: none;
 `;
 
 export const ItemStyled = styled.div`

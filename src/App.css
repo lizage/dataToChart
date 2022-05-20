@@ -6,11 +6,7 @@ html,
   direction: ltr;
   font-family: "Roboto", sans-serif;
   font-size: 10px;
-}
-
-button,
-input {
-  outline: none;
+  color: #333;
 }
 
 .App {

@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import rootReducer from "./rootReducer";
-import { dataMiddleware } from "./middleware/data";
+import { inputMiddleware } from "./middleware/input";
 
 export default configureStore({
   reducer: rootReducer,
-  middleware: [logger, dataMiddleware],
+  middleware: [logger, inputMiddleware],
 });

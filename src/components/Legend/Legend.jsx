@@ -1,26 +1,26 @@
 import React from "react";
 import {
   WrapperStyled,
-  TileStyled,
+  LegendStyled,
   ValueLabelStyled,
   NameLabelStyled,
   MarkerStyled,
-} from "./Tiles.style";
+} from "./Legend.style";
 
-const Tiles = ({ list }) => {
+const Legend = ({ list }) => {
   return (
     <WrapperStyled>
       {list.map((item) => (
-        <TileStyled key={item.name}>
+        <LegendStyled key={item.name}>
           <ValueLabelStyled>
             <MarkerStyled bgColor={item.color} />
             <span>{item.value}</span>
           </ValueLabelStyled>
           <NameLabelStyled>{item.name}</NameLabelStyled>
-        </TileStyled>
+        </LegendStyled>
       ))}
     </WrapperStyled>
   );
 };
 
-export default Tiles;
+export default Legend;

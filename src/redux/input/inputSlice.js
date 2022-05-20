@@ -7,7 +7,8 @@ export const inputSlice = createSlice({
   },
   reducers: {
     updateInput: (state, action) => {
-      state.isInput = action.payload.values?.length > 0;
+      state.isInput =
+        action.payload && Object.values(action.payload).length > 0;
     },
   },
 });

@@ -14,6 +14,10 @@ export const input = {
   ],
 };
 
+// test cases:
+// export const input = null;
+// export const input = {};
+
 export const colors = [
   "#00487b",
   "#5e98cf",
